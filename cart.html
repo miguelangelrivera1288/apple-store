@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Carrito de Compras</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="store.html">Tienda</a>
+      <a href="catalogo.html">Catálogo</a>
+    </nav>
+  </header>
+
+  <main class="carrito">
+    <!-- Imagen principal del carrito -->
+    <div class="carrito-contenido">
+      <img src="img/carrito.png" alt="Carrito de compras" class="carrito-img">
+    </div>
+
+    <!-- Lista dinámica de productos -->
+    <div id="lista-carrito">
+      <!-- Aquí se insertan los productos con JS -->
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="navegacion">
+      <button onclick="pagar()">Finalizar Compra</button>
+      <button onclick="volverATienda()">Volver a Tienda</button>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo Apple</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Catálogo Apple</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="store.html">Tienda</a>
+      <a href="cart.html">Carrito</a>
+    </nav>
+  </header>
+
+  <main class="catalogo">
+    
+    <!-- Producto Apple Watch -->
+    <div class="producto">
+      <img src="img/apple watch.png" alt="Apple Watch">
+      <h2>Apple Watch</h2>
+      <p>Reloj inteligente de Apple</p>
+      <button onclick="agregarAlCarrito('Apple Watch', 399, 'img/apple watch.png')">Agregar al carrito</button>
+    </div>
+
+    <!-- Producto iPhone 17 Pro Max -->
+    <div class="producto">
+      <img src="img/iphone 17 pro max.png" alt="iPhone 17 Pro Max">
+      <h2>iPhone 17 Pro Max</h2>
+      <p>Smartphone de última generación</p>
+      <button onclick="agregarAlCarrito('iPhone 17 Pro Max', 1299, 'img/iphone 17 pro max.png')">Agregar al carrito</button>
+    </div>
+
+  </main>
+
+  <!-- Botón para ver carrito -->
+  <div class="navegacion">
+    <button onclick="window.location.href='cart.html'">Ver Carrito</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
