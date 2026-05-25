@@ -1,0 +1,168 @@
+/* ===== Pantalla Bienvenido ===== */
+body.inicio {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #1a1a1a, #bfbfbf);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.contenido {
+  text-align: center;
+}
+
+/* Título Bienvenido */
+.contenido h1 {
+  font-size: 5em;
+  font-weight: 700;
+  color: #d9d9d9;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  margin-bottom: 40px;
+}
+
+/* Imagen del MacBook con halo */
+.macbook {
+  width: 600px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* Halo luminoso detrás del MacBook */
+.macbook::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,150,255,0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* Botón IR A TIENDA */
+.contenido button {
+  margin-top: 40px;
+  padding: 12px 40px;
+  font-size: 1.2em;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contenido button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ===== Catálogo / Tienda ===== */
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 40px;
+  margin: 40px;
+}
+
+.producto {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.producto img {
+  width: 100%;     /* ocupa todo el ancho */
+  height: auto;    /* mantiene proporción */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Botones de navegación */
+.navegacion {
+  text-align: center;
+  margin: 30px;
+}
+
+.navegacion button {
+  margin: 10px;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navegacion button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ===== Carrito de Compras ===== */
+.carrito {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.carrito-img {
+  max-width: 400px;   /* tamaño máximo */
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Lista de productos en carrito */
+#lista-carrito {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.producto-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.producto-carrito button {
+  background-color: #ff4d4d;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.producto-carrito button:hover {
+  background-color: #cc0000;
+}
+
+.carrito-item-img {
+  width: 80px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.carrito-total {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 1.2em;
+}
