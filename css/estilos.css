@@ -2,11 +2,19 @@
 body.inicio {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(to bottom, #1a1a1a, #bfbfbf);
+  background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #2c2c2c, #000000);
+  background-size: 600% 600%;
+  animation: fondoOscuro 20s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+@keyframes fondoOscuro {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
 }
 
 /* Contenedor principal */
@@ -18,8 +26,8 @@ body.inicio {
 .contenido h1 {
   font-size: 5em;
   font-weight: 700;
-  color: #d9d9d9;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  color: #e0e0e0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
   margin-bottom: 40px;
 }
 
@@ -30,10 +38,10 @@ body.inicio {
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
 }
 
-/* Halo luminoso detrás del MacBook */
+/* Halo luminoso detrás del MacBook con animación */
 .macbook::before {
   content: "";
   position: absolute;
@@ -41,28 +49,36 @@ body.inicio {
   left: 50%;
   width: 700px;
   height: 400px;
-  background: radial-gradient(circle, rgba(0,150,255,0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,150,255,0.25) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   z-index: -1;
   border-radius: 50%;
+  animation: pulso 4s infinite;
 }
 
-/* Botón IR A TIENDA */
+@keyframes pulso {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+}
+
+/* Botón IR A TIENDA con efecto glow */
 .contenido button {
   margin-top: 40px;
   padding: 12px 40px;
   font-size: 1.2em;
-  border: 2px solid #000;
+  border: none;
   border-radius: 10px;
-  background-color: transparent;
-  color: #000;
+  background: linear-gradient(45deg, #0066ff, #00ccff);
+  color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,150,255,0.7);
 }
 
 .contenido button:hover {
-  background-color: #000;
-  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0,200,255,1), 0 0 50px rgba(0,200,255,0.8);
 }
 
 /* ===== Catálogo / Tienda ===== */
@@ -81,9 +97,13 @@ body.inicio {
   border-radius: 10px;
 }
 
+/* Ajuste de imágenes en tienda */
 .producto img {
-  width: 100%;     /* ocupa todo el ancho */
-  height: auto;    /* mantiene proporción */
+  max-width: 250px;   /* límite máximo */
+  width: 100%;        /* se adapta al contenedor */
+  height: auto;       /* mantiene proporción */
+  margin: 0 auto;     /* centrado */
+  display: block;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -165,4 +185,151 @@ body.inicio {
   margin-top: 20px;
   text-align: right;
   font-size: 1.2em;
+}
+/* ===== Fondo animado para Carrito ===== */
+body {
+  background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #2c2c2c, #000000);
+  background-size: 600% 600%;
+  animation: fondoOscuro 20s ease infinite;
+}
+
+@keyframes fondoOscuro {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
+
+/* ===== Botones con efecto glow ===== */
+.navegacion button,
+.carrito button {
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #0066ff, #00ccff);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,150,255,0.7);
+}
+
+.navegacion button:hover,
+.carrito button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0,200,255,1), 0 0 50px rgba(0,200,255,0.8);
+}
+/* ===== Fondo animado para Catálogo ===== */
+body {
+  background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #2c2c2c, #000000);
+  background-size: 600% 600%;
+  animation: fondoOscuro 20s ease infinite;
+}
+
+@keyframes fondoOscuro {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
+
+/* ===== Botones con efecto glow ===== */
+.catalogo button,
+.navegacion button {
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #0066ff, #00ccff);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,150,255,0.7);
+}
+
+.catalogo button:hover,
+.navegacion button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0,200,255,1), 0 0 50px rgba(0,200,255,0.8);
+}
+/* ===== Fondo animado para Checkout ===== */
+body {
+  background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #2c2c2c, #000000);
+  background-size: 600% 600%;
+  animation: fondoOscuro 20s ease infinite;
+}
+
+@keyframes fondoOscuro {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
+
+/* ===== Estilos para Checkout ===== */
+.checkout {
+  text-align: center;
+  margin-top: 100px;
+  color: #e0e0e0;
+}
+
+.checkout h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+.checkout p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+/* Botón con efecto glow */
+.checkout button {
+  padding: 12px 40px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #0066ff, #00ccff);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,150,255,0.7);
+}
+
+.checkout button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0,200,255,1), 0 0 50px rgba(0,200,255,0.8);
+}
+/* ===== Fondo animado para Store ===== */
+body {
+  background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #2c2c2c, #000000);
+  background-size: 600% 600%;
+  animation: fondoOscuro 20s ease infinite;
+}
+
+@keyframes fondoOscuro {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
+
+/* ===== Botones con efecto glow ===== */
+.navegacion button {
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #0066ff, #00ccff);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,150,255,0.7);
+}
+
+.navegacion button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0,200,255,1), 0 0 50px rgba(0,200,255,0.8);
+}
+
+/* ===== Ajuste de imágenes en Store ===== */
+.producto img {
+  max-width: 250px;   /* límite máximo */
+  width: 100%;        /* se adapta al contenedor */
+  height: auto;       /* mantiene proporción */
+  margin: 0 auto;     /* centrado */
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
